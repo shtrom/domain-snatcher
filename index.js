@@ -79,3 +79,4 @@ schedule.scheduleJob('*/5 * * * *', () => {
     .filter(({ startCheck }) => new Date(startCheck).getTime() < Date.now())
     .forEach(({ name, maxPrice }) => main(name, maxPrice))
 })
+console.log('[INFO] Registered jobs')
