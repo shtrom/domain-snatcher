@@ -7,7 +7,7 @@ var ovh = require('ovh')({
 ovh.request('POST', '/auth/credential', {
   'accessRules': [
     { 'method': 'GET', 'path': '/order/cart/*'},
-    { 'method': 'GET', 'path': '/me/order/*'},
+    { 'method': 'POST', 'path': '/me/order/*'},
     { 'method': 'POST', 'path': '/order/cart/*'},
     { 'method': 'DELETE', 'path': '/order/cart/*'}
   ]
