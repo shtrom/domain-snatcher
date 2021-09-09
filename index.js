@@ -55,7 +55,7 @@ const main = async (domain, maxPrice) => {
     const order = await ovh.requestPromised('POST', `/order/cart/${cartId}/checkout`)
 
     const payRes = await ovh.requestPromised(
-      'GET',
+      'POST',
       `/me/order/${order.orderId}/payWithRegisteredPaymentMean`,
       { paymentMean: process.env.PAYMENT_MEAN },
     )
