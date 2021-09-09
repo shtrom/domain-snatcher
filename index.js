@@ -32,7 +32,10 @@ const main = async (domain, maxPrice) => {
     })
 
     if (!goldOffer.orderable) {
-      return abortWithMessage(cartId, `[${domain}] Unavailable`)
+      return abortWithMessage(cartId, `[${domain}] Unavailable (non-orderable)`)
+    }
+    if (goldOffer.pricingMode === 'transfer-default') {
+      return abortWithMessage(cartId, `[${domain}] Unavailable (transferable)`)
     }
 
     const { value: price, text: priceText } = goldOffer.prices[0].price
